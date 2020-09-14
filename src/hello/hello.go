@@ -4,7 +4,11 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"time"
 )
+
+const tempoDeEsperaEmSegundos = 2
+const monitoramentos = 10
 
 func main() {
 
@@ -34,7 +38,9 @@ func exibeIntroducao() {
 	versao := 1.1
 	fmt.Println("Olá, qual é o seu nome?")
 	fmt.Scan(&nome)
+	pulaUmaLinhaNoConsole()
 	fmt.Println(nome, "este programa está na versão", versao)
+	pulaUmaLinhaNoConsole()
 }
 
 func exibeMenu() {
@@ -52,8 +58,22 @@ func leComando() int {
 }
 
 func iniciarMonitoramento() {
-	fmt.Println("Monitorando...")
-	site := "https://random-status-code.herokuapp.com/"
+	for i := 0; i < monitoramentos; i++ {
+		fmt.Println("Monitorando...")
+		pulaUmaLinhaNoConsole()
+		sites := []string{"https://translate.google.com/",
+			"https://www.google.com.br/",
+			"https://random-status-code.herokuapp.com/"}
+		for indice, site := range sites {
+			fmt.Println("Testando site", indice, ":", site)
+			testaSite(site)
+			time.Sleep(tempoDeEsperaEmSegundos * time.Second)
+			pulaUmaLinhaNoConsole()
+		}
+	}
+}
+
+func testaSite(site string) {
 	resp, _ := http.Get(site)
 
 	if resp.StatusCode == 200 {
@@ -61,4 +81,8 @@ func iniciarMonitoramento() {
 	} else {
 		fmt.Println("O site:", site, "tem algum problema. Código retornado:", resp.StatusCode)
 	}
+}
+
+func pulaUmaLinhaNoConsole() {
+	println("")
 }
