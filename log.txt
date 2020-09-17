@@ -1,0 +1,8 @@
+17/09/2020 08:51:06 - Endereço: https://translate.google.com/ - online: true
+17/09/2020 08:51:08 - Endereço: https://www.google.com.br/ - online: true
+17/09/2020 08:51:11 - Endereço: https://random-status-code.herokuapp.com/ - online: false
+17/09/2020 08:51:13 - Endereço: https://globoesporte.globo.com/futebol/times/corinthians/ - online: true
+17/09/2020 08:51:15 - Endereço: https://translate.google.com/ - online: true
+17/09/2020 08:51:17 - Endereço: https://www.google.com.br/ - online: true
+17/09/2020 08:51:20 - Endereço: https://random-status-code.herokuapp.com/ - online: true
+17/09/2020 08:51:22 - Endereço: https://globoesporte.globo.com/futebol/times/corinthians/ - online: true
